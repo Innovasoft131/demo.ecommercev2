@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #f5fbe2;
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.header{
+    background: radial-gradient(#fff, #beffaa);
+}
+
+.header .row{
+    margin-top: 70px;
+}

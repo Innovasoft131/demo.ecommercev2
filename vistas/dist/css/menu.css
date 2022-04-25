@@ -1,0 +1,462 @@
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+/*    background-color: white; */
+    height: 6.5rem;
+    line-height: 6.5rem;
+    transition: 0.5s;
+}
+
+.active-color{
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0,0, 0, 0.1);
+}
+
+.nav.fix-nav{
+    width: 100%;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.nav .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.wrapper .logo a img{
+    color: grey;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.wrapper .nav-list{
+    display: inline-flex;
+    margin-top: -44px;
+}
+
+.nav-list li i{
+    color: gray;
+}
+
+.nav-list a{
+    color: #000;
+    font-size: 15px;
+    margin: 0 15px;
+    border-radius: 0.5rem;
+    transition: all 300ms ease;
+    text-decoration: none;
+}
+
+.nav-list a:hover{
+    color: #085e97;
+}
+
+
+.nav-list .icons span{
+    display: inline-block;
+    margin: 0.3rem 1rem 0 0;
+    position: relative;
+    
+}
+
+
+.nav-list .drop-menu1{
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    width: 20rem;
+    top: 8.5rem;
+    line-height: 4.5rem;
+    position: absolute;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease;
+}
+
+
+.nav-list .drop-menu1  li a{
+    display: block;
+    font-size: 15px;
+    width: 100%;
+    padding: 0 0 0 1.5rem;
+    border-radius: 0;
+    color: #000;
+}
+
+
+.nav-list .drop-menu1 li a:hover{
+    color: #085e97;
+}
+
+.nav-list li:hover .drop-menu1, .nav-list li:hover .mega-box {
+    opacity: 1;
+    visibility: visible;
+    top: 6.5rem;
+}
+
+.mega-box{
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 8.5rem;
+    left: 0;
+    width: 100%;
+    padding: 0 3rem;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 300ms ease;
+}
+
+.mega-box .content{
+    padding: 2.5rem 4rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.mega-box .content .row-menu{
+    width: calc(25% - 2rem);
+    line-height: 2.5rem;
+}
+
+.content .row-menu img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content .row-menu header{
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+}
+
+.content .row-menu .mega-links{
+    border-left: 1px solid rgba(255, 255, 255, 0.09);
+    margin-left: -4rem;
+
+}
+
+.content .row-menu li{
+    padding: 0 2rem;
+}
+
+.content .row-menu li a{
+    padding: 0 2rem;
+    display: block;
+    font-size: 15px;
+    color: #000;
+}
+
+.content .row-menu li a:hover{
+    color: #085e97;
+    transition: all 300ms ease;
+}
+
+.nav-list .mobile-item{
+    display: none;
+}
+
+
+.nav-list input{
+    display: none;
+}
+
+.wrapper .btn-menu{
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+@media only screen and (max-width: 1014px){
+    .wrapper .nav-list{
+        position: fixed;
+        top: 44px;
+        left: -100%;
+        height: 100%;
+        width: 100%;
+        max-width: 35rem;
+        background-color: white;
+        display: block;
+        overflow-y: auto;
+        line-height: 2.5rem;
+        box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.1);
+        transition: all 300ms linear;
+    }
+
+    .wrapper .nav-list.show{
+        left: 0;
+    }
+
+    .nav-list li{
+        margin: 1.5rem 1rem;
+    }
+
+    .nav-list a{
+        display: block;
+        font-size: 15px;
+        padding: 0 2rem;
+        color: #000;
+    }
+
+    .nav-list .drop-menu1{
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        top: 6.5rem;
+        padding-left: 2rem;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    #showdrop1:checked ~ .drop-menu1,
+    #showMega:checked ~ .mega-box{
+        max-height: 100%;
+    }
+    
+    .nav-list .drop-menu1 li{
+        margin: 0;
+    }
+    
+    .nav-list .drop-menu1 li a{
+        color: gray;
+        font-size: 15px;
+    }
+    
+    .nav-list .desktop-item{
+        display: none;
+    }
+    
+    .nav-list .mobile-item{
+        display: block;
+        font-size: 15px;
+        padding: 3rem;
+        color: #000;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        transition: all 300ms ease;
+    }
+    
+    .nav-list .mobile-item:hover{
+        color:#085e97;
+    }
+
+    .mega-box{
+        position: static;
+        top: 6.5rem;
+        padding: 0 2rem;
+        opacity: 1;
+        visibility: visible;
+        max-height: 0;
+        overflow: hidden; 
+        transition: all 300ms ease;
+    }
+
+    .mega-box .content{
+        flex-direction: column;
+        padding: 2rem 2rem 0 2rem;
+    }
+
+    .mega-box .content .row-menu{
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.09);
+        margin-bottom: 1.5rem;
+    }
+
+    .content .row-menu:nth-child(1),
+    .content .row-menu:nth-child(2){
+        border-top: 0;
+    }
+
+    .content .row-menu .mega-links{
+        border-left: 0;
+        padding-left: 2rem;
+    }
+
+    .row-menu .mega-links li{
+        margin: 0;
+    }
+
+    .wrapper .btn-menu{
+        display: block;
+        color: #000;
+    }
+
+    .nav-list .top{
+        position: relative;
+        display: block;
+        background-color: #085e97;
+        width: 100%;
+        height: 8rem;
+    }
+
+    .nav-list .close-btn{
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        color: white;
+    }
+
+    .nav-list .icons{
+        padding-left: 2rem;
+    }
+
+    .btn-title{
+        margin-left: -249px;
+        color: white;
+        font-size: 44px;
+    }
+
+
+}
+@media only screen and (max-width: 1024px){
+    .wrapper .nav-list{
+        position: fixed;
+        top: 44px;
+        left: -100%;
+        height: 100%;
+        width: 100%;
+        max-width: 35rem;
+        background-color: white;
+        display: block;
+        overflow-y: auto;
+        line-height: 2.5rem;
+        box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.1);
+        transition: all 300ms linear;
+    }
+
+    .wrapper .nav-list.show{
+        left: 0;
+    }
+
+    .nav-list li{
+        margin: 1.5rem 1rem;
+    }
+
+    .nav-list a{
+        display: block;
+        font-size: 15px;
+        padding: 0 2rem;
+        color: #000;
+    }
+
+    .nav-list .drop-menu1{
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        top: 6.5rem;
+        padding-left: 2rem;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    #showdrop1:checked ~ .drop-menu1,
+    #showMega:checked ~ .mega-box{
+        max-height: 100%;
+    }
+    
+    .nav-list .drop-menu1 li{
+        margin: 0;
+    }
+    
+    .nav-list .drop-menu1 li a{
+        color: gray;
+        font-size: 15px;
+    }
+    
+    .nav-list .desktop-item{
+        display: none;
+    }
+    
+    .nav-list .mobile-item{
+        display: block;
+        font-size: 15px;
+        padding: 3rem;
+        color: #000;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        transition: all 300ms ease;
+    }
+    
+    .nav-list .mobile-item:hover{
+        color:#085e97;
+    }
+
+    .mega-box{
+        position: static;
+        top: 6.5rem;
+        padding: 0 2rem;
+        opacity: 1;
+        visibility: visible;
+        max-height: 0;
+        overflow: hidden; 
+        transition: all 300ms ease;
+    }
+
+    .mega-box .content{
+        flex-direction: column;
+        padding: 2rem 2rem 0 2rem;
+    }
+
+    .mega-box .content .row-menu{
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.09);
+        margin-bottom: 1.5rem;
+    }
+
+    .content .row-menu:nth-child(1),
+    .content .row-menu:nth-child(2){
+        border-top: 0;
+    }
+
+    .content .row-menu .mega-links{
+        border-left: 0;
+        padding-left: 2rem;
+    }
+
+    .row-menu .mega-links li{
+        margin: 0;
+    }
+
+    .wrapper .btn-menu{
+        display: block;
+        color: #000;
+    }
+
+    .nav-list .top{
+        position: relative;
+        display: block;
+        background-color: #085e97;
+        width: 100%;
+        height: 8rem;
+    }
+
+    .nav-list .close-btn{
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        color: white;
+    }
+
+    .nav-list .icons{
+        padding-left: 2rem;
+    }
+
+    .btn-title{
+        margin-left: -249px;
+        color: white;
+        font-size: 44px;
+    }
+
+
+}
+
